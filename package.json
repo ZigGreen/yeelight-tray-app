@@ -1,0 +1,27 @@
+{
+  "name": "yeelight-tray",
+  "productName": "yeelight",
+  "version": "1.0.0",
+  "main": "./src/modules/main/main.js",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron ./src/modules/main/main.js",
+    "package": "electron-packager ./ --platform=darwin --arch=x64 --out=out --icon=./assets/icon.icns --overwrite",
+    "dmg": "electron-installer-dmg ./out/yeelight-darwin-x64/yeelight.app yeelighttray --out=builds --overwrite",
+    "clean": "rm -rf ./out ./builds ./node_modules",
+    "publich": "npm run clean && npm i && npm run package && npm run dmg"
+  },
+  "devDependencies": {
+    "electron-installer-dmg": "^2.0.0",
+    "electron-packager": "^12.1.1",
+    "electron-prebuilt": "^1.4.13"
+  },
+  "dependencies": {
+    "fix-path": "^2.1.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "node-yeelight": "^1.0.6",
+    "vue": "^2.5.17",
+    "vue-color": "^2.6.0"
+  }
+}

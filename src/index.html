@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns: xmlns:>
+<head>
+    <meta charset="utf-8">
+    <title>PortalWEB</title>
+    <link rel="stylesheet" href="./vendor/css/photon.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./index.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="../node_modules/xterm/dist/xterm.css"/>
+    <script charset="utf-8">require('./index')</script>
+</head>
+<body>
+<div class="header-arrow"></div>
+<div class="window" id="app">
+    <header class="toolbar toolbar-header">
+        <div class="toolbar-actions">
+            <button class="btn btn-default" @click="toggle">
+                toggle
+            </button>
+            <input class="brightness" type="range" min="1" max="100" value="50" @change="brightness">
+
+            <button class="btn btn-default pull-right" @click="exit">
+                exit
+            </button>
+        </div>
+    </header>
+    <div class="content">
+        <slider v-model="colors" @input="color"></slider>
+    </div>
+
+</div>
+</body>
+</html>
